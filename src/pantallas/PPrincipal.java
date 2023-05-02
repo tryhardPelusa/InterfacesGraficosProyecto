@@ -18,14 +18,12 @@ import javax.swing.DefaultComboBoxModel;
 public class PPrincipal extends JFrame {
 
 	private JPanel contentPane;
-	private JComboBox comboBoxApuestas;
-	private JMenuBar menuBar;
+	private JPanel panel;
 	private JComboBox comboBoxLigas;
+	private JComboBox comboBoxApuestas;
 	private JComboBox comboBoxEquipos;
-	private JButton btnCuenta;
+	private JButton btnMiCuenta;
 	private JButton btnSignOut;
-	private JPanel panelLigasPublicas;
-	private JPanel panelLigasPrivadas;
 
 	public static void main(String[] args) {
 
@@ -42,35 +40,34 @@ public class PPrincipal extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		menuBar = new JMenuBar();
-		menuBar.setForeground(new Color(0, 0, 0));
-		menuBar.setBounds(62, 11, 885, 35);
-		contentPane.add(menuBar);
+		panel = new JPanel();
+		panel.setBackground(new Color(0, 255, 255));
+		panel.setForeground(new Color(0, 0, 0));
+		panel.setBounds(62, 11, 885, 35);
+		contentPane.add(panel);
+		panel.setLayout(null);
 		
 		comboBoxLigas = new JComboBox();
 		comboBoxLigas.setModel(new DefaultComboBoxModel(new String[] {"Ligas", "Crear Liga", "Unirse a Liga", "Ver Ligas"}));
-		menuBar.add(comboBoxLigas);
+		comboBoxLigas.setBounds(10, 0, 96, 35);
+		panel.add(comboBoxLigas);
 		
 		comboBoxApuestas = new JComboBox();
 		comboBoxApuestas.setModel(new DefaultComboBoxModel(new String[] {"Apuestas", "Mis Apuestas", "Apostar"}));
-		menuBar.add(comboBoxApuestas);
+		comboBoxApuestas.setBounds(116, 0, 96, 35);
+		panel.add(comboBoxApuestas);
 		
 		comboBoxEquipos = new JComboBox();
-		comboBoxEquipos.setModel(new DefaultComboBoxModel(new String[] {"Equipos", "Unirse a equipo", "Crear equipo"}));
-		menuBar.add(comboBoxEquipos);
+		comboBoxEquipos.setModel(new DefaultComboBoxModel(new String[] {"Equipos", "Unirse a equipo", "Crear Equipo"}));
+		comboBoxEquipos.setBounds(222, 0, 96, 35);
+		panel.add(comboBoxEquipos);
 		
-		btnCuenta = new JButton("Mi cuenta");
-		menuBar.add(btnCuenta);
+		btnMiCuenta = new JButton("Mi Cuenta");
+		btnMiCuenta.setBounds(678, 0, 96, 35);
+		panel.add(btnMiCuenta);
 		
 		btnSignOut = new JButton("Sign Out");
-		menuBar.add(btnSignOut);
-		
-		panelLigasPublicas = new JPanel();
-		panelLigasPublicas.setBounds(62, 111, 313, 355);
-		contentPane.add(panelLigasPublicas);
-		
-		panelLigasPrivadas = new JPanel();
-		panelLigasPrivadas.setBounds(419, 111, 313, 355);
-		contentPane.add(panelLigasPrivadas);
+		btnSignOut.setBounds(779, 0, 96, 35);
+		panel.add(btnSignOut);
 	}
 }
